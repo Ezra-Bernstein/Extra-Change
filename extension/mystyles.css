@@ -1,0 +1,17 @@
+.spinspinspin {
+    animation-name: spin;
+    animation-duration: 1.0s;
+    animation-iteration-count: infinite; 
+}
+
+#first {
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+}
+
+#second {
+    position: absolute;
+    top: 30%;
+    left: 40%; 
+}
