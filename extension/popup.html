@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="position: relative; text-align: center; padding: 24px 28px 20px; background-color: rgb(255, 255, 255); border-radius: 5px;">
+
+        <div >
+            <img src="donate-hand-5.png" alt="Hand Image" data-radium="true" style="margin: auto; max-width: 250px;"></div>
+        
+            <div data-radium="true"
+            style="color: rgb(41, 42, 42); font-size: 18px; font-weight: 500; margin-bottom: 22px; text-align: center; margin-top: 5px;">
+            Round up the price for extra change?
+            </div>
+        
+        
+            <div data-radium="true" style="font-size: 14px; line-height: 1.6; text-align: left;">
+            <div>
+                <div>
+                    <div>
+                        <p class="price"><span>Cart Total </span><span class="text" id="totalPrice">$</span></p>
+                        <p class="text"><span>Donation </span><span class="text" id="donatePrice">$</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>         
+            
+    <div>
+        <form id="formID" method="post" target="_blank">     
+            <label for="accountNumber">Bank Account Number:</label>       
+            <input type="text" id="accNUm" name="accNUm"><br><br>
+            <input type="hidden" name="amount" id="amnt" value="0.85">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="popup.js"></script>
+</body>
+</html>

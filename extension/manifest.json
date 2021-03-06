@@ -1,0 +1,29 @@
+{
+    "name": "extra-change ext",
+    "description": "Round up your expense and donate the change to the people in need",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "icons": {
+        "16": "./donate-hand-5.png",
+        "32": "./donate-hand-5.png",
+        "48": "./donate-hand-10.png",
+        "128": "./donate-hand-10.png"
+    },
+    "background": {
+        "scripts": ["./background.js"]
+    },
+    "options_page": "./options.html",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs",
+        "https://www.google.com/*",
+        "storage",
+        "https://www.amazon.com/*"
+    ], 
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "js": ["foreground.js", "jquery-3.4.1.min.js"]
+    }]
+}
