@@ -1,26 +1,26 @@
 from flask import Flask, request, render_template, redirect, url_for, session
 from dotenv import load_dotenv
 import os
-from datastax_functions import createUser, getUserID, getUserData, checkUser, userExists, 
+from datastax_functions import createUser, getUserID, getUserData, checkUser, userExists, createFund, addToFund
 
-#load_dotenv()
+load_dotenv()
 
 
 
 app = Flask(__name__)
-#app.secret_key=os.environ.get("SECRET_KEY")
+app.secret_key=os.environ.get("FLASK_SESSION_KEY")
 
 
 @app.route('/')
 def hello():
     """Return a friendly HTTP greeting."""
-    return "Hello World!"
-    #return render_template('landing.html')
+    return render_template('landing.html')
 
 #signup page
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method=='POST':
+        print(request.form)
         username = request.form['username']
         password = request.form['password']
         
@@ -29,9 +29,9 @@ def signup():
         else:
             createUser(username, password)
             session['username'] = username
-            return redirect(url_for('map'))
+            return redirect(url_for('newFund'))
     elif request.method=='GET':
-        return render_template('signup.html')
+        return render_template('landing.html')
 
 
     elif request.method=='GET':
@@ -46,7 +46,7 @@ def login():
         
         if checkUser(username, password):
             session['username'] = username
-            return redirect(url_for('map'))
+            return redirect(url_for('newFund'))
         else:
            return redirect(url_for('login'))
 
@@ -62,20 +62,28 @@ def logout():
 @app.route('/newFund', methods=['GET', 'POST'])
 def newFund():
     if request.method=='GET':
-        return render_template('newFund.html')
+        return render_template('dashboard.html')
 
     elif request.method=='POST':
         fundName = request.form['fundName']
         fundDesc = request.form['fundDesc']
         fundGoal = request.form['fundGoal']
-        #fundCreator = session['user']
-
+        fundCreator = session['user']
+        createFund(fundName, fundDesc, fundGoal)
         return redirect(url_for('fund'))
 
 @app.route('/fund')
 def fund():
-    return render_template('fund.html', fund)
+    fundData = getUserData(session['username'])
+    return render_template('fund.html', fundData)
 
+@app.route('/addFunds', methods = ['POST'])
+def addFunds():
+    amount = request.form['amount']
+    #creator = ??
+    fundName = request.form['fundName']
+
+    return redirect(url_for('fund'))
 
 
 
