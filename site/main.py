@@ -31,7 +31,7 @@ def signup():
             session['username'] = username
             return redirect(url_for('newFund'))
     elif request.method=='GET':
-        return render_template('landing.html')
+        return render_template('signup.html')
 
 
     elif request.method=='GET':
