@@ -1,3 +1,69 @@
-<h1>{{ data["fundName"] }} by {{ creator }}</h1>
-<p>{{ data["fundDesc"] }}</p>
-<p>Total of {{ data["fundAmount"] }} out of {{ data["fundGoal"] }} donated</p>
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/view.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Extra Change</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">Home </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/newFund">Start Fundraiser</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                </li>
+            </ul>
+
+        </div>
+   
+    </nav>
+    <br><br>
+    <h2 class ="card-class" width = "30%";>Progress of Fundraisers</h2>
+
+    <div class="row">
+        <div class="col-sm-3 card-class border-success text-success">
+            <div class="card">
+                <div class="card-body text-success">
+                    <h5 class="card-title">{{ data["fundName"] }} by {{ creator }}</h5>
+                    <h6 class="card-subtitle mb-2 text-success">Total of {{ data["fundAmount"] }} out of {{ data["fundGoal"] }} donated</h6>
+                    <p class="card-text"><p>{{ data["fundDesc"] }}</p></p>
+                   
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+  
+
+    <script src="" async defer></script>
+</body>
+
+</html>
