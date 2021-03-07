@@ -4,10 +4,10 @@
     "version": "0.1.0",
     "manifest_version": 2,
     "icons": {
-        "16": "./donate-hand-5.png",
-        "32": "./donate-hand-5.png",
-        "48": "./donate-hand-10.png",
-        "128": "./donate-hand-10.png"
+        "16": "./green-hand.png",
+        "32": "./green-hand.png",
+        "48": "./green-hand.png",
+        "128": "./green-hand.png"
     },
     "background": {
         "scripts": ["./background.js"]
