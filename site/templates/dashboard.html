@@ -41,34 +41,24 @@
                 </nav>
         <br><br>
         <h2>Your Recent Fundrasiers</h2>
+
+        {% for fund in data["funds"].keys() %}
         <div class="row">
             <div class="col-sm-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Fundraiser Title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Deadline: </h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                            content.</p>
+                        <h5 class="card-title">{{data["funds"][fund]["fundName"]}}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{data["funds"][fund]["fundAmount"]}} out of {{data["funds"][fund]["fundGoal"]}}</h6>
+                        <p class="card-text">{{data["funds"][fund]["fundDesc"]}}</p>
                         <a href="#" class="card-link">View</a>
                      
                     </div>
                 </div>
             </div>
 
-         
         </div>
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Fundraiser Title</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Deadline: </h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                            card's
-                            content.</p>
-                        <a href="#" class="card-link">View</a>
+        {% endfor %}
       
-
         
         <script src="" async defer></script>
     </body>

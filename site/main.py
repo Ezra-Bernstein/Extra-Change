@@ -62,6 +62,7 @@ def logout():
 @app.route('/dashboard')
 def dashboard():
     data = getUserData(getUserID(session['username']))
+    print(data)
     return render_template('dashboard.html', data=data)
 
 
