@@ -66,7 +66,7 @@ def createFund(fundName, fundDesc, fundGoal, fundCreator):
 def addToFund(fundName, fundCreator, amount):
     id = getUserID(fundCreator)
     data = getUserData(id)["funds"]
-    newAmount = str(int(data[fundName]["fundAmount"]) + amount)
+    newAmount = str(float(data[fundName]["fundAmount"]) + float(amount))
     newData = '{"fundAmount": "' + newAmount + '"}'
     response = requests.patch(BASE_URL + '/userData/' + id + '/funds/' + fundName, headers=headers, data=newData)
     return response
@@ -95,4 +95,3 @@ def getFund(username, fundName):
         return data["funds"][fundName]
     else:
         return "that fund does not exists"
-
