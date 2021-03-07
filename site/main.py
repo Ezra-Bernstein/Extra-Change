@@ -63,7 +63,7 @@ def logout():
 def dashboard():
     data = getUserData(getUserID(session['username']))
     print(data)
-    return render_template('dashboard.html', data=data)
+    return render_template('dashboard.html', data=data, username=session['username'])
 
 
 @app.route('/newFund', methods=['GET', 'POST'])
