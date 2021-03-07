@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for, session
 from dotenv import load_dotenv
 import os
 from datastax_functions import createUser, getUserID, getUserData, checkUser, userExists, createFund, addToFund, getFundsList, getFund
+import urllib.parse
 
 load_dotenv()
 
@@ -81,6 +82,7 @@ def newFund():
 
 @app.route('/fund/<username>/<fundName>')
 def fund(username, fundName):
+    username = urllib.parse.unquote(username)
     fundData = getFund(username, fundName)
     return render_template('view.html', data = fundData, creator=username)
 
@@ -98,7 +100,8 @@ def addFunds():
     print(fundName)
     print(creator)
     addToFund(fundName, creator, amount)
-    return redirect("http://0.0.0.0:5000/fund/" + creator +"/"+ fundName)
+    return redirect(url_for('fund', username=creator, fundName=fundName))
+    #return redirect("http://0.0.0.0:5000/fund/" + creator +"/"+ fundName)
 
 @app.route('/getFundList', methods = ['GET'])
 def getFundList():
