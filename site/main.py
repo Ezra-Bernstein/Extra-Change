@@ -81,7 +81,7 @@ def newFund():
 @app.route('/fund/<username>/<fundName>')
 def fund(username, fundName):
     fundData = getFund(username, fundName)
-    return render_template('view.html', data = fundData)
+    return render_template('view.html', data = fundData, creator=username)
 
 @app.route('/addFunds', methods = ['POST'])
 def addFunds():
