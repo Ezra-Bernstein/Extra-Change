@@ -38,7 +38,7 @@ $.get("https://extra-change.ue.r.appspot.com/getFundList", function(data, status
 
         var valueElemnt = name + ', ' + creator; 
 
-        $('#myList').append('<option value =' + valueElemnt + '>' + name + '</option>'); 
+        $('#myList').append('<option value ="' + valueElemnt + '">' + name + '</option>'); 
     }
 
 
