@@ -30,15 +30,31 @@
     <div>         
             
     <div>
-        <form id="formID" method="post" target="_blank">     
+        <form id="formID" action="/donateChange" method="post">     
+            <fieldset>
+                <legend>Selecting Funds</legend>
+                <p>
+                    <label>Select</label>
+                        <select id = "myList">
+                        <option value = "1">Fund 1</option>
+                        <option value = "2">Fund 2</option>
+                        <option value = "3">Fund 3</option>
+                        <option value = "4">Fund 4</option>
+                        <option value = "4">Fund 5</option>
+                    </select>
+                </p>
+            </fieldset>
+
+            <br> 
             <label for="accountNumber">Bank Account Number:</label>       
             <input type="text" id="accNUm" name="accNUm"><br><br>
-            <input type="hidden" name="amount" id="amnt" value="0.85">
-            <input type="submit" value="Submit">
+            <input type="hidden" name="amount" id="amnt" value="0.0">
+            <input type="submit" value="Donate">
         </form>
     </div>
 
     <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="popup.js"></script>
+
 </body>
 </html>

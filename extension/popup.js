@@ -7,6 +7,8 @@ chrome.storage.local.get("subtotal", value => {
 
         $('#totalPrice').html('$' + totalPrice); 
         $('#donatePrice').html('$' + donatePrice)
+        $('#amnt').value(donatePrice); 
+
     } else {
         console.log("No Price"); 
     }
