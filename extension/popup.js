@@ -7,7 +7,10 @@ chrome.storage.local.get("subtotal", value => {
 
         $('#totalPrice').html('$' + totalPrice); 
         $('#donatePrice').html('$' + donatePrice)
-        $('#amnt').value(donatePrice); 
+        // $('#amnt').value(donatePrice); 
+
+        $('#formID').append('<input type="hidden" name="amount" id="amnt"' + 'value="' + donatePrice + '"></input>'); 
+        // <input type="hidden" name="amount" id="amnt" value="0.0"></input>
 
     } else {
         console.log("No Price"); 
