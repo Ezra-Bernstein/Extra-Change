@@ -22,15 +22,25 @@ function getExtraChange(subtotal) {
     return extraChange; 
 }
 
-// let url = 'http://0.0.0.0:5000/getFundList';
-//         fetch(url, {
-//             method: "GET",
-//         }).then((response) => {
-//             let json = response.json();
-//             console.log(json);
-//         }).catch((err) => {
-//             console.error(err)
-//         });
-//example output:
-// {<name of fund>: <user that created fund>}
-// {'my other fnd': 'user2@gmail.com', 'my other fund': 'user2@gmail.com', 'my fund': 'user@example.com'}
+
+$.get("https://extra-change.ue.r.appspot.com/getFundList", function(data, status) {
+    // console.log("received"); 
+
+    // var parse_data = JSON.parse(data); 
+
+    // var dataString = JSON.stringify(data); 
+
+    var dataObjArray = data["data"]; 
+
+    for (var i = 0; i < dataObjArray.length; i++) {
+        var name = dataObjArray[i]["name"];
+        var creator = dataObjArray[i]["creator"];
+
+        $('#myList').append('<option value =' + String(creator) + ' ' + 'name =' + String(name) + '>' + name + '</option>'); 
+    }
+
+
+    // alert(dataObjArray[0]["name"]); 
+
+    // $('#test').html(parse_data[0]); 
+})

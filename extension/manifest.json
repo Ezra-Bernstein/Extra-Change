@@ -18,10 +18,10 @@
     },
     "permissions": [
         "tabs",
-        "https://www.google.com/*",
         "storage",
         "https://www.amazon.com/*",
-        "http://0.0.0.0:5000/*"
+        "http://0.0.0.0:5000/*",
+        "https://extra-change.ue.r.appspot.com/*"
     ], 
     "content_scripts": [{
         "matches": ["<all_urls>"],
