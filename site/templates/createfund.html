@@ -16,8 +16,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Extra Change</a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#"><strong>Extra Change</strong></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -41,18 +41,27 @@
         </div>
     </nav>
     
-    <h1>Extra Change</h1>
-    <div class="submission">
+    <div class="submission" style="margin-top: 50px;">
         <form class="login-form" action="/newFund" method="post">
-            <label for="name-fund">Title of Fundraiser</label><br>
-            <input type="text" id="name-fund" name="name-fund"><br>
 
-              Short Description<textarea for="description" id="description" rows="4" cols="25" name="description"></textarea>
-            <br><label for="goal">Goal (money-wise) </label>
-            <input type="number" id="goal" name="goal">
+            <div class="mb-3">
+            <label class="form-label" for="name-fund"><strong>Title of Fundraiser</strong></label><br>
+            <input class="form-control" type="text" id="name-fund" name="name-fund"><br>
+            </div>
+
+            <div class="form-floating">
+                <label class="form-label" for="name-fund"><strong>Short Description</strong></label><br>
+                <textarea class="form-control" for="description" id="description" rows="4" cols="25" name="description"></textarea><br>
+              <!-- <textarea for="description" id="description" rows="4" cols="25" name="description"></textarea> -->
+            </div>
+            
+            <div class="mb-3">
+            <label class="form-label" for="goal"><strong>Goal (money-wise)</strong></label><br>
+            <input class="form-control" type="number" id="goal" name="goal"><br>
+            </div>
 
 
-            <button class="favorite styled" type="submit">
+            <button class="favorite styled btn" type="submit" style="border-radius: 12px; width: 290px; background-color: #2E8B57; color: white;">
                 Create
             </button>
 
