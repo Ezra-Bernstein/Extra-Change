@@ -76,7 +76,7 @@ def newFund():
         fundGoal = request.form['goal']
         fundCreator = session['username']
         createFund(fundName, fundDesc, fundGoal, fundCreator)
-        return redirect(url_for('fund'))
+        return redirect(url_for('fund', username=fundCreator, fundName=fundName))
 
 @app.route('/fund/<username>/<fundName>')
 def fund(username, fundName):
@@ -96,8 +96,8 @@ def addFunds():
     creator = fundData[1]
     print(fundName)
     print(creator)
-    #addToFund(fundName, creator, amount)
-    return 'Funds Added!'
+    addToFund(fundName, creator, amount)
+    return redirect("http://0.0.0.0:5000/fund/" + creator +"/"+ fundName)
 
 @app.route('/getFundList', methods = ['GET'])
 def getFundList():
