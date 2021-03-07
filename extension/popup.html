@@ -7,10 +7,10 @@
     <title>Document</title>
 </head>
 <body>
-    <div style="position: relative; text-align: center; padding: 24px 28px 20px; background-color: #FFB6C1; border-radius: 8px;">
+    <div style="position: relative; text-align: center; padding: 20px 24px 20px; background-color: #FFB6C1; border-radius: 8px; max-height: 620px; width:350px;">
 
         <div >
-            <img src="green-hand.png" alt="Hand Image" data-radium="true" style="margin: auto; max-width: 250px;"></div>
+            <img src="green-hand.png" alt="Hand Image" data-radium="true" style="margin: auto; max-width: 220px;"></div>
         
             <div data-radium="true"
             style="color: rgb(41, 42, 42); font-size: 20px; font-weight: 500; margin-bottom: 22px; text-align: center; margin-top: 5px;">
@@ -33,7 +33,7 @@
     <div style="position: relative;">
         <form id="formID" action="http://0.0.0.0:5000/addFunds" method="post" target="_blank">     
             <fieldset>
-                <p>
+                <!-- <p> -->
                     <label class="form-label fst-italic" for="inputFunds">Selecting Funds</label>
                     <select class="form-select" aria-label="Default select example" style="background-color: #0d6efd; color:white;" name="selectedFund" id = "myList" onchange="selectFund()">
                         <!-- <option value = "Fund 1">Fund 1</option>
@@ -42,12 +42,16 @@
                         <option value = "Fund 4">Fund 4</option>
                         <option value = "Fund 4">Fund 5</option> -->
                     </select>
-                </p>
+                <!-- </p> -->
             </fieldset>
 
             <br> 
             <!-- <label for="accountNumber">Bank Account Number:</label>        -->
             <!-- <input type="text" id="accNUm" name="accNUm"><br><br> -->
+            <div class="form-floating mb-3">
+                <input type="text" id="accNUm" name="accNUm" class="form-control" placeholder="name@example.com">
+                <label for="bankAccountInput">Bank Account</label>
+            </div>
             <input type="hidden" name="fundName" id="fName" value="0">
             <!-- <input type="hidden" name="amount" id="amnt" value="0.0"> -->
             <input type="submit" value="Donate" style="border-radius: 12px; width: 100px; background-color: #FF8C00;">
