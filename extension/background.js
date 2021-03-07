@@ -16,7 +16,7 @@ chrome.tabs.onActivated.addListener(tab => {
             chrome.tabs.insertCSS(null, {file: './mystyles.css'}); 
             chrome.tabs.executeScript(null, {file: './foreground.js'}, () =>  console.log("I injected")); 
 
-            // chrome.tabs.executeScript(null, {file: './popup.js'}, () =>  console.log("Popup script executed")); 
+            chrome.tabs.executeScript(null, {file: './popup.js'}, () =>  console.log("Popup script executed")); 
         }
     }) 
 });
