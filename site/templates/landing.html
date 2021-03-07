@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="../static/landing.css">
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
             <a class="navbar-brand" href="#">Extra Change</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,21 +40,32 @@
        <br>
         <br>
        <br>
+
+       <img src="green-hand.png" alt="Hand Image" data-radium="true" style="margin: auto; max-width: 180px; display: block; margin-left: auto; margin-right: auto; width: 50%; margin-bottom: 40px;"></div>
+
      <div class="login-form">
         <form class ="login-form"  action="/login" method="post">
         
         <form action="/login" method="POST">
-            <label  for="email">Email</label><br>
-            <input  type="email" id="email" name="username"><br><br>
-            <label  for="password">Password</label><br>
-            <input  type="password" id="password" name="password">
-            <button  class="favorite styled" type="submit">
+
+            <div class="mb-3">
+            <label  class="form-label" for="email">Email</label>
+            <input  class="form-control" type="email" id="email" name="username" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+            <label  class="form-label" for="password">Password</label><br>
+            <input  class="form-control" type="password" id="password" name="password">
+            </div>
+
+            <div>
+            <button  class="favorite styled btn" type="submit" style="border-radius: 12px; width: 290px; background-color: #2E8B57; color: white;">
                 Login
             </button>
+            </div>
           
-        
-
         </form>
+        
         
         </div>
         
