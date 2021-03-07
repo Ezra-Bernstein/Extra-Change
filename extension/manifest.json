@@ -20,7 +20,8 @@
         "tabs",
         "https://www.google.com/*",
         "storage",
-        "https://www.amazon.com/*"
+        "https://www.amazon.com/*",
+        "http://0.0.0.0:5000/*"
     ], 
     "content_scripts": [{
         "matches": ["<all_urls>"],
